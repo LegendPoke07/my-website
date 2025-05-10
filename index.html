@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Special Day</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container" id="stage1">
+    <h1 class="title">A Very Special Day</h1>
+    <div class="fireworks" id="fireworks"></div>
+    <button class="btn" id="continueBtn">Click to Continue</button>
+  </div>
+
+  <div class="container hidden" id="stage2">
+    <h1 class="title">11 May</h1>
+    <button class="btn" id="nextStage">Next</button>
+  </div>
+
+  <div class="container hidden" id="stage3">
+    <div class="blast"></div>
+    <h1 class="title">Happy Mother's Day</h1>
+    <button class="btn" id="galleryStart">Next</button>
+  </div>
+
+  <div class="container hidden" id="gallery">
+    <img id="galleryImage" src="" alt="Special Memory"/>
+    <p id="galleryText"></p>
+    <button class="btn" id="nextImage">Next</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
