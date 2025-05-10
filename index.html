@@ -1,35 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Special Day</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Day</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .content {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-  <div class="container" id="stage1">
-    <h1 class="title">A Very Special Day</h1>
-    <div class="fireworks" id="fireworks"></div>
-    <button class="btn" id="continueBtn">Click to Continue</button>
-  </div>
 
-  <div class="container hidden" id="stage2">
-    <h1 class="title">11 May</h1>
-    <button class="btn" id="nextStage">Next</button>
-  </div>
+    <div id="page1" class="content active">
+        <h1>A Very Special Day</h1>
+        <button onclick="showNext('page2')">Click to Continue</button>
+    </div>
 
-  <div class="container hidden" id="stage3">
-    <div class="blast"></div>
-    <h1 class="title">Happy Mother's Day</h1>
-    <button class="btn" id="galleryStart">Next</button>
-  </div>
+    <div id="page2" class="content">
+        <h1>11 May</h1>
+        <button onclick="showNext('page3')">Next</button>
+    </div>
 
-  <div class="container hidden" id="gallery">
-    <img id="galleryImage" src="" alt="Special Memory"/>
-    <p id="galleryText"></p>
-    <button class="btn" id="nextImage">Next</button>
-  </div>
+    <div id="page3" class="content">
+        <h1>Happy Mother's Day</h1>
+        <button onclick="showNext('page4')">Next</button>
+    </div>
 
-  <script src="script.js"></script>
+    <div id="page4" class="content">
+        <h1>Special Memory</h1>
+        <button onclick="showNext('page5')">Next</button>
+    </div>
+
+    <div id="page5" class="content">
+        <h1>Thank You!</h1>
+    </div>
+
+    <script>
+        function showNext(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.content');
+            pages.forEach(page => page.classList.remove('active'));
+            
+            // Show the next page
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+
 </body>
 </html>
